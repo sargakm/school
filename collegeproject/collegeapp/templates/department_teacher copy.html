@@ -11,7 +11,6 @@
     <div class="container m-5">
     <table class="table table-bordered table-primary">
         <tr>
-            <th>ID</th>
             <th>FIRSTNAME</th>
             <th>LASTNAME</th>
             <th>EMAIL</th>
@@ -22,7 +21,6 @@
         </tr>
         {% for i in x1 %}
         <tr> 
-            <td>{{i.id}}</td>
             <td>{{i.tid.first_name}}</td>
             <td>{{i.tid.last_name}}</td>
             <td>{{i.tid.email}}</td>

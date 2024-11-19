@@ -3,36 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Teacher Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container shadow m-5">
+    <div class="container shadow p-5 my-5 rounded">
+        <h2 class="text-center mb-4">Teacher Registration</h2>
         <form action="reg_teacher" method="POST">
             {% csrf_token %}
-            <label for="">DEPARTMENT</label>
-            <select name="dep" class="form-select">
-                {% for i in x1 %}
-                <option value="{{i.id}}">{{i.Dep_name}}</option><br>
-                {% endfor %}
-            </select><br><br>
-            <label for="" class="form-label">FIRSTNANME</label>
-            <input type="text" name="fname" class="form-control">
-            <label for="" class="form-label">LASTNAME</label>
-            <input type="text" name="lname" class="form-control"><br><br>
-            <label for="" class="form-label">EMAIL</label>
-            <input type="text" name="email" class="form-control"><br><br>
-            <label for="" class="form-label">USERNAME</label>
-            <input type="text" name="username" class="form-control"><br><br>
-            <label for="" class="form-label">PASSWORD</label>
-            <input type="text" name="password" class="form-control"><br><br>
-            <label for="" class="form-label">AGE</label>
-            <input type="text" name="age" class="form-control"><br><br>
-            <label for="" class="form-label">ADDRESS</label>
-            <input type="text" name="address" class="form-control"><br><br>
-            <label for="" class="form-label">QUALIFICATION</label>
-            <input type="text" name="qual" class="form-control"><br><br>
-            <input type="submit" value="REGISTER" class="btn btn-success">
+
+            <!-- Department Dropdown -->
+            <div class="form-group">
+                <label for="dep">Department</label>
+                <select name="dep" id="dep" class="form-control">
+                    <option value="">--select department--</option>
+                    {% for i in x1 %}
+                        <option value="{{i.id}}">{{i.Dep_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" id="fname" class="form-control" required>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname" class="form-control" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-control" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" class="form-control" required>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" class="form-control" required>
+            </div>
+
+            <!-- Qualification -->
+            <div class="form-group">
+                <label for="qual">Qualification</label>
+                <input type="text" name="qual" id="qual" class="form-control" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group text-center">
+                <input type="submit" value="Register" class="btn btn-success">
+            </div>
         </form>
     </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
